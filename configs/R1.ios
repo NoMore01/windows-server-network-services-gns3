@@ -1,0 +1,15 @@
+! R1 - NTP client of the Windows Server
+conf t
+ interface FastEthernet0/0
+  ip address 25.0.0.10 255.255.252.0
+  no shutdown
+ exit
+ ntp server 25.0.0.2
+end
+write memory
+
+! Verification
+show ip interface brief
+show ntp associations
+show ntp status
+show clock detail

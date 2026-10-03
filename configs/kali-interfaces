@@ -1,0 +1,9 @@
+# /etc/network/interfaces on KALIVM-1 (internal network)
+source /etc/network/interfaces.d/*
+
+auto eth0
+iface eth0 inet static
+    address 10.15.0.3
+    netmask 255.255.0.0
+    gateway 10.15.0.2
+    up ip route add 25.0.0.0/22 via 10.15.0.2
